@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Primary Meta Tags -->
+  <title>Vigneshwaran R — Senior Full-Stack Developer Portfolio</title>
+  <meta name="title" content="Vigneshwaran R — Senior Full-Stack Developer Portfolio">
+  <meta name="description" content="Senior Full-Stack Developer with 6+ years of experience specializing in Angular, Node.js, AWS Lambda, serverless systems, and database optimization.">
+  <meta name="keywords" content="Vigneshwaran R, Full-Stack Developer, Senior Software Engineer, Angular, Node.js, AWS Lambda, Tirunelveli, Tamil Nadu, PostgreSQL, DynamoDB, Serverless, System Design">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Vigneshwaran R">
+  <link rel="canonical" href="https://vigneshwaran.dev">
+
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vigneshwaran.dev">
+  <meta property="og:title" content="Vigneshwaran R — Senior Full-Stack Developer Portfolio">
+  <meta property="og:description" content="Senior Full-Stack Developer with 6+ years of experience specializing in Angular, Node.js, AWS Lambda, serverless systems, and database optimization.">
+  <meta property="og:image" content="https://vigneshwaran.dev/assets/portfolio-preview.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://vigneshwaran.dev">
+  <meta property="twitter:title" content="Vigneshwaran R — Senior Full-Stack Developer Portfolio">
+  <meta property="twitter:description" content="Senior Full-Stack Developer with 6+ years of experience specializing in Angular, Node.js, AWS Lambda, serverless systems, and database optimization.">
+  <meta property="twitter:image" content="https://vigneshwaran.dev/assets/portfolio-preview.jpg">
+  
+  <!-- Tailwind CSS v3 Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Outfit', 'sans-serif'],
+            body: ['Inter', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Custom CSS stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Inline script to determine dark mode instantly and prevent flash -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('theme') || 'system';
+      const isDark = savedTheme === 'dark' || (savedTheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    })();
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 dark:bg-[#090d16] dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+  <!-- ==========================================================================
+       INITIAL PAGE LOADER
+       ========================================================================== -->
+  <div id="loader-container">
+    <div class="loader-spinner"></div>
+    <span class="mt-4 font-display font-semibold tracking-widest text-xs text-indigo-600 dark:text-emerald-400 animate-pulse">VIGNESHWARAN R</span>
+  </div>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION BAR
+       ========================================================================== -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-slate-200/50 dark:border-slate-800/40 bg-slate-50/80 dark:bg-[#090d16]/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <!-- Logo / Name -->
+        <a href="#" class="font-display font-extrabold text-xl tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5 hover:opacity-90 transition-opacity">
+          <span>VIGNESHWARAN</span><span class="text-indigo-600 dark:text-emerald-400">R</span>
+        </a>
+
+        <!-- Desktop Navigation links -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300">Home</a>
+          <a href="#about" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300">About</a>
+          <a href="#skills" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300">Skills</a>
+          <a href="#projects" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300">Projects</a>
+          <a href="#volunteer-achievement" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300">Volunteer/Achievement</a>
+          <a href="#contact" class="nav-link font-body text-sm font-medium text-slate-600 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white relative py-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:height-[2px] after:bg-indigo-600 dark:after:bg-emerald-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 font-semibold">Contact Me</a>
+        </nav>
+
+        <!-- Desktop Action Controls -->
+        <div class="hidden md:flex items-center gap-4">
+          <!-- Theme Switcher Group -->
+          <div class="flex items-center bg-slate-200/60 dark:bg-slate-800/60 p-1 rounded-full border border-slate-300/20">
+            <button id="theme-btn-light" onclick="applyTheme('light')" class="p-1.5 rounded-full hover:text-indigo-600 dark:hover:text-white transition-colors" title="Light Theme">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+            <button id="theme-btn-dark" onclick="applyTheme('dark')" class="p-1.5 rounded-full hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors" title="Dark Theme">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+            <button id="theme-btn-system" onclick="applyTheme('system')" class="p-1.5 rounded-full hover:text-indigo-600 dark:hover:text-white transition-colors" title="System Settings">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </button>
+          </div>
+          <!-- CTA -->
+          <a href="#contact" class="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 text-white dark:text-slate-950 font-display font-semibold text-sm transition-all shadow-sm hover:shadow-md">
+            Hire me
+          </a>
+        </div>
+
+        <!-- Mobile view controls -->
+        <div class="flex items-center md:hidden gap-3">
+          <!-- Mobile Theme Toggle button -->
+          <button onclick="applyTheme(localStorage.getItem('theme') === 'dark' ? 'light' : 'dark')" class="p-2 rounded-full border border-slate-300/40 dark:border-slate-800/40 bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-300" aria-label="Toggle Theme">
+            <svg class="w-5 h-5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="w-5 h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+            </svg>
+          </button>
+          
+          <!-- Hamburger toggle button -->
+          <button id="menu-toggle" class="p-2 rounded-lg border border-slate-300/40 dark:border-slate-800/40 bg-slate-100 dark:bg-slate-900 text-slate-700 dark:text-slate-300 focus:outline-none" aria-label="Toggle Menu">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200/50 dark:border-slate-800/40 bg-slate-50 dark:bg-[#090d16] py-4 shadow-inner">
+      <nav class="flex flex-col space-y-3 px-6">
+        <a href="#" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 border-b border-slate-100 dark:border-slate-900">Home</a>
+        <a href="#about" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 border-b border-slate-100 dark:border-slate-900">About</a>
+        <a href="#skills" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 border-b border-slate-100 dark:border-slate-900">Skills</a>
+        <a href="#projects" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 border-b border-slate-100 dark:border-slate-900">Projects</a>
+        <a href="#volunteer-achievement" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 border-b border-slate-100 dark:border-slate-900 font-semibold">Volunteer/Achievement</a>
+        <a href="#contact" class="mobile-nav-link text-base font-medium text-slate-600 dark:text-slate-400 py-2 font-semibold">Contact Me</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN CONTENT CONTAINER
+       ========================================================================== -->
+  <main class="flex-grow pt-16 sm:pt-20">
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="home" class="relative overflow-hidden min-h-[calc(100vh-80px)] flex items-center py-12 md:py-24">
+      
+      <!-- Backdrop Ambient Blurry Blobs -->
+      <div class="ambient-glow w-[35rem] h-[35rem] bg-indigo-500/10 dark:bg-indigo-600/15 top-[-10%] left-[-15%]"></div>
+      <div class="ambient-glow w-[35rem] h-[35rem] bg-emerald-500/10 dark:bg-emerald-600/20 bottom-[-10%] right-[-15%]" style="animation-delay: 4s;"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 w-full">
+        <div class="grid md:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text Content -->
+          <div class="md:col-span-6 flex flex-col gap-6 text-left reveal">
+            <!-- Greeting Tag -->
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-200/50 dark:bg-slate-900/80 border border-slate-300/30 dark:border-slate-800/30 w-fit">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300">💼 Technical Lead & Architect</span>
+            </div>
+            
+            <!-- Headline -->
+            <h1 class="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-none text-slate-950 dark:text-white">
+              Hi, I'm <br class="hidden sm:inline" /><span class="bg-gradient-to-r from-emerald-500 via-teal-400 to-emerald-600 dark:from-emerald-400 dark:to-teal-500 bg-clip-text text-transparent">Vigneshwaran R</span>
+            </h1>
+
+            <h2 class="font-display font-bold text-xl sm:text-2xl text-slate-700 dark:text-slate-300">
+              Senior Full-Stack Developer
+            </h2>
+            
+            <p class="font-body text-slate-600 dark:text-slate-400 leading-relaxed text-base sm:text-lg">
+              I have <span class="text-indigo-600 dark:text-emerald-400 font-semibold">6+ years</span> of experience designing scalable systems, optimizing databases, and leading high-performing teams of 12+ developers at Centizen Inc. using Angular, Node.js, and AWS Lambda.
+            </p>
+            
+            <!-- Action buttons -->
+            <div class="flex flex-wrap items-center gap-4 mt-2">
+              <a href="#projects" class="group h-12 px-6 rounded-full bg-indigo-600 hover:bg-indigo-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 font-display font-extrabold text-sm sm:text-base tracking-wide transition-all shadow-md flex items-center justify-center gap-2">
+                <span>View My Projects</span>
+                <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+              <a href="#contact" class="h-12 px-6 rounded-full border border-slate-300 dark:border-slate-800 bg-transparent hover:bg-slate-100 dark:hover:bg-slate-900 text-slate-800 dark:text-slate-200 font-display font-extrabold text-sm sm:text-base tracking-wide transition-all flex items-center justify-center gap-2">
+                <span>Contact Me</span>
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Social Media profile links -->
+            <div class="flex items-center gap-4 mt-6">
+              <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-slate-500 font-display">Let's connect</span>
+              <div class="flex gap-2">
+                <a href="https://www.linkedin.com/in/er-vigneshwaran-r" target="_blank" class="p-2.5 rounded-full border border-slate-300/40 dark:border-slate-800/40 bg-white/65 dark:bg-slate-900/60 hover:text-indigo-600 dark:hover:text-emerald-400 hover:scale-105 hover:shadow-sm transition-all" title="LinkedIn Profile">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"></path></svg>
+                </a>
+                <a href="mailto:mail4rviky@gmail.com" class="p-2.5 rounded-full border border-slate-300/40 dark:border-slate-800/40 bg-white/65 dark:bg-slate-900/60 hover:text-indigo-600 dark:hover:text-emerald-400 hover:scale-105 hover:shadow-sm transition-all" title="Send Email">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Bottom Stats Grid -->
+            <div class="grid grid-cols-4 gap-4 border-t border-slate-200/40 dark:border-slate-800/40 pt-6 mt-6">
+              <div class="text-left">
+                <span class="block font-display font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-emerald-400">6+</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">Years Experience</span>
+              </div>
+              <div class="text-left">
+                <span class="block font-display font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-emerald-400">12+</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">Projects Built</span>
+              </div>
+              <div class="text-left">
+                <span class="block font-display font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-emerald-400">80+</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">Mentoring Scale</span>
+              </div>
+              <div class="text-left">
+                <span class="block font-display font-extrabold text-2xl sm:text-3xl text-indigo-600 dark:text-emerald-400">40%</span>
+                <span class="text-[10px] sm:text-xs text-slate-500 dark:text-slate-400 font-medium">Performance Improved</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Right side: Key Highlights Card -->
+          <div class="md:col-span-6 flex justify-center reveal reveal-delay-200">
+            <div class="relative w-full max-w-[480px] p-8 rounded-3xl border border-slate-200/50 dark:border-slate-800/40 bg-white/30 dark:bg-slate-900/20 backdrop-blur-xl shadow-lg flex flex-col justify-between overflow-hidden">
+              <div class="mb-6">
+                <span class="text-xs uppercase font-extrabold tracking-widest text-slate-400 dark:text-slate-500">Key Highlights</span>
+              </div>
+
+              <div class="flex flex-col gap-6">
+                <!-- Highlight 1: Leadership -->
+                <div class="flex items-start gap-4">
+                  <div class="p-3 rounded-2xl bg-indigo-500/10 dark:bg-emerald-500/10 text-indigo-600 dark:text-emerald-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-sm text-slate-900 dark:text-white">Engineering Leadership & Mentoring</h4>
+                    <p class="font-body text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Led a team of 12+ developers at Centizen Inc. while driving developer mentoring programs.</p>
+                  </div>
+                </div>
+
+                <!-- Highlight 2: Performance -->
+                <div class="flex items-start gap-4">
+                  <div class="p-3 rounded-2xl bg-indigo-500/10 dark:bg-emerald-500/10 text-indigo-600 dark:text-emerald-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-sm text-slate-900 dark:text-white">Microservices & Performance</h4>
+                    <p class="font-body text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Built and maintained production microservices architecture, boosting performance by 40%.</p>
+                  </div>
+                </div>
+
+                <!-- Highlight 3: Architecture -->
+                <div class="flex items-start gap-4">
+                  <div class="p-3 rounded-2xl bg-indigo-500/10 dark:bg-emerald-500/10 text-indigo-600 dark:text-emerald-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-sm text-slate-900 dark:text-white">Architecture & Lifecycle Ownership</h4>
+                    <p class="font-body text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Designed scalable database architectures; owned complete application lifecycle from requirements to deployment.</p>
+                  </div>
+                </div>
+
+                <!-- Highlight 4: Cloud -->
+                <div class="flex items-start gap-4">
+                  <div class="p-3 rounded-2xl bg-indigo-500/10 dark:bg-emerald-500/10 text-indigo-600 dark:text-emerald-400 flex-shrink-0">
+                    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-display font-bold text-sm text-slate-900 dark:text-white">AWS Cloud & Collaboration</h4>
+                    <p class="font-body text-xs text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">Leveraged AWS Serverless architecture while coordinating across BA, QA, Design, and DevOps teams.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Animated Digital Mesh Wave Grid Graphic -->
+              <!-- <div class="absolute bottom-0 left-0 w-full pointer-events-none select-none overflow-hidden h-24">
+                <svg class="w-full h-full transform translate-y-4 opacity-80" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M 0,80 Q 40,65 80,80 T 160,80 T 240,80 T 320,80 T 400,80" stroke="url(#highlight-mesh-grad)" stroke-width="1.2" stroke-dasharray="2,5" />
+                  <path d="M 0,85 Q 50,70 100,85 T 200,85 T 300,85 T 400,85" stroke="url(#highlight-mesh-grad)" stroke-width="1.0" stroke-dasharray="1.5,4" />
+                  <path d="M 0,90 Q 30,75 60,90 T 120,90 T 180,90 T 240,90 T 300,90 T 360,90 T 400,90" stroke="url(#highlight-mesh-grad)" stroke-width="1.5" stroke-dasharray="3,6" />
+                  <path d="M 0,72 Q 60,50 120,72 T 240,72 T 360,72 T 400,72" stroke="url(#highlight-mesh-grad)" stroke-width="0.8" stroke-dasharray="1,5" opacity="0.6" />
+                  <path d="M 0,65 Q 70,40 140,65 T 280,65 T 400,65" stroke="url(#highlight-mesh-grad)" stroke-width="0.5" stroke-dasharray="1,6" opacity="0.4" />
+                  <defs>
+                    <linearGradient id="highlight-mesh-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#10b981" stop-opacity="0" />
+                      <stop offset="35%" stop-color="#10b981" stop-opacity="0.8" />
+                      <stop offset="65%" stop-color="#14b8a6" stop-opacity="0.8" />
+                      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT SECTION ============ -->
+    <section id="about" class="relative py-20 sm:py-28 border-t border-slate-200/40 dark:border-slate-800/20 bg-slate-100/50 dark:bg-slate-900/30">
+      
+      <!-- Backdrop Ambient Blurry Blob -->
+      <div class="ambient-glow w-96 h-96 bg-indigo-500/5 dark:bg-indigo-600/10 top-[20%] right-[-10%]"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        <div class="grid md:grid-cols-12 gap-12 items-start">
+          
+          <!-- Left side: About and Bio -->
+          <div class="md:col-span-6 flex flex-col gap-6 reveal">
+            <div>
+              <span class="text-xs uppercase font-extrabold tracking-widest text-indigo-600 dark:text-emerald-400">My Background</span>
+              <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-2 text-slate-950 dark:text-white">About Me</h2>
+              <div class="h-1 w-16 bg-indigo-600 dark:bg-emerald-400 mt-3"></div>
+            </div>
+            
+            <p class="font-body text-slate-700 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+              I am a <strong class="text-slate-950 dark:text-white">Senior Full-Stack Developer & Technical Lead</strong> at <strong class="text-indigo-600 dark:text-emerald-400">Centizen Inc.</strong> with 6+ years of expertise designing and delivering scalable, cloud-native enterprise platforms. My technical leadership centers on translating complex business requirements into high-performance architectures, mentoring engineering teams of 12+ developers, and enforcing software development best practices.
+            </p>
+
+            <p class="font-body text-slate-600 dark:text-slate-400 leading-relaxed text-sm sm:text-base">
+              My engineering focus is centered on <strong class="text-slate-900 dark:text-white">serverless system design (AWS Lambda, API Gateway), database schema optimization (PostgreSQL, DynamoDB), and robust frontend engineering (Angular)</strong>. I specialize in bridging cross-functional collaboration across Business Analysis, Quality Assurance, Design, and DevOps teams to deliver systems that scale seamlessly under high transactional loads.
+            </p>
+
+            <div class="glass-card p-5 rounded-2xl">
+              <span class="text-xs uppercase font-bold text-slate-400 dark:text-slate-500">Core Mission</span>
+              <blockquote class="italic text-slate-700 dark:text-slate-300 mt-2 text-sm sm:text-base leading-relaxed">
+                "My mission is to architect resilient, low-latency platforms that drive measurable business outcomes, while cultivating collaborative, high-performing engineering cultures."
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Right side: Education and Experience Details -->
+          <div class="md:col-span-6 flex flex-col gap-6 reveal reveal-delay-200">
+            <!-- Detail            <div class="glass-card p-6 rounded-2xl flex flex-col gap-6">
+              <h3 class="font-display font-bold text-lg text-slate-950 dark:text-white">Professional History & Details</h3>
+              
+              <!-- Timeline Container -->
+              <div class="flex flex-col gap-6 border-l border-slate-200 dark:border-slate-800/40 pl-4 ml-2">
+                <!-- Senior Software Developer -->
+                <div class="relative">
+                  <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-600 dark:bg-emerald-400 border-2 border-white dark:border-[#090d16]"></div>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">May 2022 – Present</span>
+                    <span class="font-body text-sm font-semibold text-slate-900 dark:text-white mt-0.5">Senior Software Developer — Centizen Inc.</span>
+                    <ul class="list-disc list-inside text-xs text-slate-500 dark:text-slate-400 mt-1 space-y-1">
+                      <li>Leading team of 12+ developers</li>
+                      <li>Maintaining scalable AWS Lambda microservices</li>
+                      <li>Designing backend architecture</li>
+                      <li>Managing project delivery and mentoring engineers</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Junior Software Developer -->
+                <div class="relative">
+                  <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-400 dark:bg-slate-600 border-2 border-white dark:border-[#090d16]"></div>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">May 2020 – May 2022</span>
+                    <span class="font-body text-sm font-semibold text-slate-900 dark:text-white mt-0.5">Junior Software Developer — Centizen Inc.</span>
+                    <ul class="list-disc list-inside text-xs text-slate-500 dark:text-slate-400 mt-1 space-y-1">
+                      <li>Developed reusable Angular components</li>
+                      <li>Worked on backend APIs and PostgreSQL</li>
+                      <li>Built customer-facing modules</li>
+                      <li>Integrated REST APIs</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Software Engineering Intern -->
+                <div class="relative">
+                  <div class="absolute -left-[21px] top-1.5 w-2.5 h-2.5 rounded-full bg-slate-350 dark:bg-slate-700 border-2 border-white dark:border-[#090d16]"></div>
+                  <div class="flex flex-col">
+                    <span class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase">Dec 2019 – May 2020</span>
+                    <span class="font-body text-sm font-semibold text-slate-900 dark:text-white mt-0.5">Software Engineering Intern — Centizen Inc.</span>
+                    <ul class="list-disc list-inside text-xs text-slate-500 dark:text-slate-400 mt-1 space-y-1">
+                      <li>Contributed to Centizen Careers and OpenCATS</li>
+                      <li>Worked on bug fixes and feature enhancements</li>
+                      <li>Learned Angular and Node.js development practices</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Education Block -->
+              <div class="border-t border-slate-200/50 dark:border-slate-800/40 pt-4 flex items-start gap-4">
+                <div class="p-2.5 rounded-xl bg-indigo-500/10 dark:bg-emerald-500/10 text-indigo-600 dark:text-emerald-400 flex-shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                </div>
+                <div>
+                  <span class="text-xs font-semibold text-slate-400 dark:text-slate-500">Education</span>
+                  <p class="font-body text-sm font-semibold text-slate-900 dark:text-white">B.E — National Engineering College</p>
+                  <p class="font-body text-xs text-slate-505">Kovilpatti, India (2016 – 2020)</p>
+                </div>
+              </div>
+
+              <!-- Info Metadata -->
+              <div class="border-t border-slate-200/50 dark:border-slate-800/40 pt-4 grid grid-cols-2 gap-4">
+                <div>
+                  <span class="text-xs text-slate-400 dark:text-slate-500">Location</span>
+                  <p class="font-body text-xs font-semibold text-slate-800 dark:text-slate-200">📍 Tirunelveli, Tamil Nadu, India</p>
+                </div>
+                <div>
+                  <span class="text-xs text-slate-400 dark:text-slate-500">Languages</span>
+                  <p class="font-body text-xs font-semibold text-slate-800 dark:text-slate-200">English, Tamil</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS SECTION ============ -->
+    <section id="skills" class="relative py-20 sm:py-28">
+      
+      <!-- Ambient Glow Blob -->
+      <div class="ambient-glow w-96 h-96 bg-emerald-500/5 dark:bg-emerald-600/10 top-[30%] left-[-10%]"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        
+        <!-- Header -->
+        <div class="text-center mb-12 sm:mb-16 reveal">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-indigo-600 dark:text-emerald-400">Expertise Stack</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-2 text-slate-950 dark:text-white">My Skills</h2>
+          <div class="h-1 w-16 bg-indigo-600 dark:bg-emerald-400 mx-auto mt-3"></div>
+        </div>
+
+        <!-- Grid of Skill cards -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Skill 1: Frontend -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-500 flex items-center justify-center font-display font-bold text-xs">FE</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">Frontend</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">Angular, TypeScript, JavaScript</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Designing clean component-driven SPAs, modular reactive layouts, and high-performance frontend state structures.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">92%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 92%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill 2: Backend -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal reveal-delay-100">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-green-500/10 text-green-500 flex items-center justify-center font-display font-bold text-xs">BE</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">Backend</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">Node.js, TypeScript (Dependency Injection), Express.js</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Developing robust REST APIs, decoupled backend microservices, event loops, and strict architectural standards.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">93%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 93%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill 3: Databases -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal reveal-delay-200">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-sky-500/10 text-sky-500 flex items-center justify-center font-display font-bold text-xs">DB</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">Databases</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">PostgreSQL, DynamoDB, OpenSearch</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Designing scalable schema designs, single-table structures, database indexes, search indices, and querying logs.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">88%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 88%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill 4: Cloud -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center font-display font-bold text-xs">AWS</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">Cloud</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">AWS Lambda, API Gateway</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Structuring low-latency serverless event handlers, custom gateway policies, and scalable API routing configurations.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">90%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill 5: Other Stack -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal reveal-delay-100">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center font-display font-bold text-xs">ORM</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">ORMs & APIs</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">Sequelize, Drizzle ORM, GraphQL</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Integrating type-safe mapping libraries, structuring efficient query models, and designing graph endpoint schemas.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">87%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 87%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skill 6: Architecture -->
+          <div class="glass-card p-6 rounded-2xl flex flex-col justify-between reveal reveal-delay-200">
+            <div>
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-500 flex items-center justify-center font-display font-bold text-xs">SYS</div>
+                <span class="font-display font-bold text-slate-900 dark:text-white">System Design</span>
+              </div>
+              <p class="text-xs text-slate-500 leading-relaxed font-semibold mb-2">System Design, Performance Optimization</p>
+              <p class="text-xs text-slate-400 leading-relaxed">Architecting decoupled microservice flows, identifying application bottlenecks, and driving server latency reductions.</p>
+            </div>
+            <div class="mt-6">
+              <div class="flex justify-between text-xs font-semibold mb-1.5">
+                <span class="text-slate-400">Proficiency</span>
+                <span class="text-indigo-600 dark:text-emerald-400">91%</span>
+              </div>
+              <div class="h-1.5 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                <div class="h-full bg-indigo-600 dark:bg-emerald-400 rounded-full" style="width: 91%"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS SECTION ============ -->
+    <section id="projects" class="relative py-20 sm:py-28 border-t border-slate-200/40 dark:border-slate-800/20 bg-slate-100/50 dark:bg-slate-900/30">
+      
+      <!-- Ambient Glow Blob -->
+      <div class="ambient-glow w-[35rem] h-[35rem] bg-indigo-500/5 dark:bg-indigo-600/10 bottom-[-10%] right-[-10%]"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-indigo-600 dark:text-emerald-400">Built Applications</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-2 text-slate-950 dark:text-white">My Projects</h2>
+          <div class="h-1 w-16 bg-indigo-600 dark:bg-emerald-400 mx-auto mt-3"></div>
+        </div>
+
+        <!-- Grid of Projects -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: Zen Partner Platform -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Enterprise SaaS</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Zen Partner Platform</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Designed and developed multi-portal architecture including Master, Affiliate and Partner systems with scalable database design.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Database schema design</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Complete workflow ownership</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>BA/QA/Design/DevOps coordination</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Production deployment</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Node.js, TypeScript, DI, Angular, PostgreSQL, Sequelize</span>
+              <a href="https://getzenbasket.com/partners/" target="_blank" class="text-xs font-semibold text-indigo-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+                View Project 
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 2: Zen Affiliate Platform -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-100">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">MarTech Portal</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Zen Affiliate Platform</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Built affiliate ecosystem with partner onboarding and commission tracking.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Partner registration workflows</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Automated commission tracking</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Secure ledger structures</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Node.js, TypeScript, DI, Angular, PostgreSQL, Sequelize</span>
+              <a href="https://getzenbasket.com/affiliates/" target="_blank" class="text-xs font-semibold text-indigo-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+                View Project 
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 3: Zenbasket -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-200">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">E-Commerce Engine</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Zenbasket</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                E-commerce store engine featuring advanced subscription, marketing referral, and cart modules.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Subscription System Integration</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Affiliate Marketing Setup</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Frequently Bought Together Recommendations</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Angular, Node.js, PostgreSQL, AWS Lambda, Sequelize, GraphQL</span>
+              <a href="https://getzenbasket.com/" target="_blank" class="text-xs font-semibold text-indigo-600 dark:text-emerald-400 hover:underline flex items-center gap-1">
+                View Project 
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Project 4: User Microservice -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Identity Service</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">User Microservice</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                User identity and account management microservice. Handles tenant registration and secure access control.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>DynamoDB single-table schema design</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>API Gateway authorization hooks</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda, DynamoDB, API Gateway</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Backend System</span>
+            </div>
+          </div>
+
+          <!-- Project 5: Subscription Microservice -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-100">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Billing Service</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Subscription Microservice</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Subscription handling and plan management. Manages accounts, product plans, quotas, and expiration lifecycles.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Stateful plans management</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Automated license & limits checks</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda, DynamoDB, API Gateway</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Backend System</span>
+            </div>
+          </div>
+
+          <!-- Project 6: SMS Microservice -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-200">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Communication</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">SMS Microservice</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                OTP and notification handling service. Resolves and delivers security codes and alerts immediately.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Twilio integration and fallback</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>2Factor provider support</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Tools: Twilio, 2Factor</span>
+            </div>
+          </div>
+
+          <!-- Project 7: Invoice Microservice -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Document Engine</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Invoice Microservice</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Invoice generation and PDF conversion system. Converts transaction logs into formatted PDF structures.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Type-safe schema mappings with Drizzle</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Puppeteer headless PDF creation</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Node.js, TypeScript, Drizzle ORM, Puppeteer</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Backend System</span>
+            </div>
+          </div>
+
+          <!-- Project 8: Distance Calculator Service -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-100">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Logistics</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Distance Calculator Service</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Distance calculation and logistics support service. Handles spatial coordinates and path dispatching.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Google Distance Matrix API mapping</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Low-latency delivery routing hooks</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda, Google Distance Matrix API</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Logistics Hook</span>
+            </div>
+          </div>
+
+          <!-- Project 9: Exchange Rate Service -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-200">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">FinTech</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Exchange Rate Service</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Currency conversion microservice supplying real-time forex conversions for global cart operations.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Exchange Rate API integration</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>High-frequency cached conversions</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda, Exchange Rate API</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">FinTech Hook</span>
+            </div>
+          </div>
+
+          <!-- Project 10: Tax Microservice -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Compliance</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Tax Microservice</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Tax configuration service using dynamic JSON configuration to evaluate regional calculations.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Dynamic JSON configuration parsing</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Compliance calculation rules evaluation</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS Lambda</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Backend System</span>
+            </div>
+          </div>
+
+          <!-- Project 11: SEO Service -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-100">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Web Optimization</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">SEO Service</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Dynamic SEO rendering for Angular projects using CloudFront CDN structures.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>CloudFront user-agent evaluation</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Dynamic searchbot pre-rendering</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">AWS CloudFront, Lambda@Edge</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Dynamic SEO</span>
+            </div>
+          </div>
+
+          <!-- Project 12: Backend Validator Package -->
+          <div class="group glass-card rounded-2xl flex flex-col justify-between overflow-hidden reveal reveal-delay-200">
+            <div class="p-6">
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-2.5 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-600 dark:bg-emerald-500/10 dark:text-emerald-400">Internal Package</span>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-emerald-400 transition-colors">Backend Validator Package</h3>
+              <p class="font-body text-slate-500 dark:text-slate-400 text-sm mt-3 leading-relaxed">
+                Custom validation package for restricting and validating REST API body, params and query structures.
+              </p>
+              
+              <ul class="mt-4 space-y-2 text-xs text-slate-500 dark:text-slate-400">
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Custom middleware request parser</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-indigo-600 dark:text-emerald-400 mt-0.5 font-bold">✓</span>
+                  <span>Centralized REST schema assertions</span>
+                </li>
+              </ul>
+            </div>
+            
+            <div class="p-6 bg-slate-50/50 dark:bg-[#0d121e]/30 border-t border-slate-200/50 dark:border-slate-800/40 flex items-center justify-between">
+              <span class="text-xs text-slate-400">Node.js, TypeScript, NPM</span>
+              <span class="text-[10px] uppercase font-bold text-slate-400">Internal Library</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VOLUNTEER & ACHIEVEMENTS SECTION ============ -->
+    <section id="volunteer-achievement" class="relative py-20 sm:py-28">
+      
+      <!-- Ambient Glow Blob -->
+      <div class="ambient-glow w-96 h-96 bg-emerald-500/5 dark:bg-emerald-600/10 top-[20%] right-[-10%]"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-indigo-600 dark:text-emerald-400">Beyond the Code</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-2 text-slate-950 dark:text-white">Volunteer & Achievements</h2>
+          <div class="h-1 w-16 bg-indigo-600 dark:bg-emerald-400 mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Column 1: Achievements -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col gap-6 reveal">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-yellow-500/10 text-yellow-500">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5a2 2 0 10-2 2h2zm0 0v4m-6-4h12M4 11v8a2 2 0 002 2h12a2 2 0 002-2v-8H4z"></path></svg>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white">Intellectual Property</h3>
+            </div>
+            
+            <div class="border border-slate-200/50 dark:border-slate-800/40 rounded-xl p-5 bg-slate-50/50 dark:bg-slate-950/20">
+              <span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase">Patent Registration</span>
+              <p class="font-display font-bold text-sm text-slate-900 dark:text-white mt-1">AUTOMATIC FLOOR CLEANING AND MOPPING DEVICE</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Engineered and patented a smart cleaning device. Designed microcontroller logic and pathfinding automation algorithms, reducing power consumption by 25% and cleaning cycles by 30%. Registered with the Controller General of Patents, India.
+              </p>
+              <a href="https://drive.google.com/file/d/1xCiY8uKczmOmepUUDQVUoCHXV57Qenit/view?usp=sharing" target="_blank" class="mt-4 inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-emerald-400 hover:underline">
+                View Patent Certificate 
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Volunteering -->
+          <div class="glass-card p-8 rounded-2xl flex flex-col gap-6 reveal reveal-delay-200">
+            <div class="flex items-center gap-3">
+              <div class="p-2.5 rounded-xl bg-teal-500/10 text-teal-600 dark:text-teal-400">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+              </div>
+              <h3 class="font-display font-extrabold text-xl text-slate-950 dark:text-white">Technical Mentorship</h3>
+            </div>
+            
+            <div class="border border-slate-200/50 dark:border-slate-800/40 rounded-xl p-5 bg-slate-50/50 dark:bg-slate-950/20">
+              <span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase">APEX Program (NEC College)</span>
+              <p class="font-display font-bold text-sm text-slate-900 dark:text-white mt-1">Lead Engineering Instructor (Phase 1 - 5)</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Volunteered as Lead Mentor across 5 key phases, training 80+ engineering graduates in serverless computing, database design, and clean-code architectures. Boosted student employment readiness by 45%.
+              </p>
+            </div>
+
+            <div class="border border-slate-200/50 dark:border-slate-800/40 rounded-xl p-5 bg-slate-50/50 dark:bg-slate-950/20">
+              <span class="text-xs font-bold text-slate-400 dark:text-slate-500 uppercase">Community & Leadership</span>
+              <p class="font-display font-bold text-sm text-slate-900 dark:text-white mt-1">CSEA President & Agaram Foundation Mentor</p>
+              <p class="text-xs text-slate-500 mt-2 leading-relaxed">
+                Mentored underprivileged students in software design foundations. Managed CSE association sprints, alumni networks, and academic events.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ME SECTION ============ -->
+    <section id="contact" class="relative py-20 sm:py-28 border-t border-slate-200/40 dark:border-slate-800/20 bg-slate-100/50 dark:bg-slate-900/30">
+      
+      <!-- Ambient Glow Blob -->
+      <div class="ambient-glow w-[35rem] h-[35rem] bg-indigo-500/5 dark:bg-indigo-600/10 top-[-10%] left-[-10%]"></div>
+
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 z-10 relative">
+        
+        <!-- Header -->
+        <div class="text-center mb-16 reveal">
+          <span class="text-xs uppercase font-extrabold tracking-widest text-indigo-600 dark:text-emerald-400">Get In Touch</span>
+          <h2 class="font-display font-extrabold text-3xl sm:text-4xl mt-2 text-slate-950 dark:text-white">Contact Me</h2>
+          <div class="h-1 w-16 bg-indigo-600 dark:bg-emerald-400 mx-auto mt-3"></div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-12">
+          
+          <!-- Contact Info Column -->
+          <div class="md:col-span-5 flex flex-col gap-6 reveal">
+            <h3 class="font-display font-bold text-xl text-slate-950 dark:text-white">Let's build your next platform</h3>
+            <p class="font-body text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+              Are you looking to hire an experienced Senior Full-Stack Technical Lead to design low-latency APIs, optimize serverless database infrastructure, or lead cross-functional development teams? Let's connect.
+            </p>
+            
+            <div class="flex flex-col gap-4 mt-2">
+              <!-- Email Card -->
+              <div class="flex items-center gap-4 glass-card p-4 rounded-xl hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-3 rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 dark:from-emerald-500/10 dark:to-teal-500/5 text-indigo-600 dark:text-emerald-400 flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400">Email</span>
+                  <a href="mailto:mail4rviky@gmail.com" class="block font-body text-sm font-semibold text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors">
+                    mail4rviky@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="flex items-center gap-4 glass-card p-4 rounded-xl hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-3 rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 dark:from-emerald-500/10 dark:to-teal-500/5 text-indigo-600 dark:text-emerald-400 flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400">Phone</span>
+                  <p class="font-body text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    +91 99422 86899
+                  </p>
+                </div>
+              </div>
+
+              <!-- Location Card -->
+              <div class="flex items-center gap-4 glass-card p-4 rounded-xl hover:scale-[1.02] transition-transform duration-300">
+                <div class="p-3 rounded-xl bg-gradient-to-br from-indigo-500/10 to-indigo-600/5 dark:from-emerald-500/10 dark:to-teal-500/5 text-indigo-600 dark:text-emerald-400 flex-shrink-0 shadow-sm">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><circle cx="12" cy="11" r="3"></circle></svg>
+                </div>
+                <div>
+                  <span class="text-[10px] uppercase font-bold text-slate-400">Location</span>
+                  <p class="font-body text-sm font-semibold text-slate-800 dark:text-slate-200">
+                    Tirunelveli, Tamil Nadu, India
+                  </p>
+                </div>
+              </div>
+
+              <!-- Resume Download Button -->
+              <a href="#" download class="mt-2 group h-12 px-6 rounded-xl border border-slate-300/40 dark:border-slate-800/40 bg-white/65 dark:bg-slate-900/60 hover:text-indigo-600 dark:hover:text-emerald-400 hover:scale-[1.02] hover:shadow-sm transition-all flex items-center justify-center gap-2 font-display font-bold text-sm text-slate-800 dark:text-slate-200">
+                <span>Download Resume</span>
+                <svg class="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div class="md:col-span-7 reveal reveal-delay-200">
+            <div class="glass-card p-8 rounded-2xl shadow-sm">
+              <form action="#" onsubmit="alert('Thank you for reaching out! In a production deployment, this form will forward notifications securely.'); return false;" class="flex flex-col gap-5">
+                
+                <div class="grid sm:grid-cols-2 gap-5">
+                  <!-- Name Input Group -->
+                  <div class="relative">
+                    <input type="text" required placeholder=" " id="contact-name" class="peer w-full bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-xl px-4 pt-6 pb-2.5 text-sm focus:outline-none focus:border-indigo-600 dark:focus:border-emerald-400 focus:ring-1 focus:ring-indigo-600/10 dark:focus:ring-emerald-400/10 text-slate-800 dark:text-slate-100 transition-all placeholder-transparent">
+                    <label for="contact-name" class="absolute left-4 top-4.5 text-xs font-semibold text-slate-400 pointer-events-none transition-all duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:font-bold peer-focus:text-indigo-600 dark:peer-focus:text-emerald-400 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-bold peer-[:not(:placeholder-shown)]:text-indigo-600 dark:peer-[:not(:placeholder-shown)]:text-emerald-400">Name</label>
+                  </div>
+                  
+                  <!-- Email Input Group -->
+                  <div class="relative">
+                    <input type="email" required placeholder=" " id="contact-email" class="peer w-full bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-xl px-4 pt-6 pb-2.5 text-sm focus:outline-none focus:border-indigo-600 dark:focus:border-emerald-400 focus:ring-1 focus:ring-indigo-600/10 dark:focus:ring-emerald-400/10 text-slate-800 dark:text-slate-100 transition-all placeholder-transparent">
+                    <label for="contact-email" class="absolute left-4 top-4.5 text-xs font-semibold text-slate-400 pointer-events-none transition-all duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:font-bold peer-focus:text-indigo-600 dark:peer-focus:text-emerald-400 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-bold peer-[:not(:placeholder-shown)]:text-indigo-600 dark:peer-[:not(:placeholder-shown)]:text-emerald-400">Email Address</label>
+                  </div>
+                </div>
+
+                <!-- Message Input Group -->
+                <div class="relative">
+                  <textarea required rows="4" placeholder=" " id="contact-message" class="peer w-full bg-slate-100/50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-xl px-4 pt-6 pb-2.5 text-sm focus:outline-none focus:border-indigo-600 dark:focus:border-emerald-400 focus:ring-1 focus:ring-indigo-600/10 dark:focus:ring-emerald-400/10 text-slate-800 dark:text-slate-100 transition-all placeholder-transparent resize-none"></textarea>
+                  <label for="contact-message" class="absolute left-4 top-4.5 text-xs font-semibold text-slate-400 pointer-events-none transition-all duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:font-normal peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:font-bold peer-focus:text-indigo-600 dark:peer-focus:text-emerald-400 peer-[:not(:placeholder-shown)]:top-1.5 peer-[:not(:placeholder-shown)]:text-[10px] peer-[:not(:placeholder-shown)]:font-bold peer-[:not(:placeholder-shown)]:text-indigo-600 dark:peer-[:not(:placeholder-shown)]:text-emerald-400">Message</label>
+                </div>
+
+                <!-- Animated Submit Button -->
+                <button type="submit" class="group relative w-full py-4 mt-2 rounded-xl bg-slate-900 dark:bg-emerald-500 hover:bg-indigo-600 dark:hover:bg-emerald-400 text-white dark:text-slate-950 font-display font-extrabold text-sm sm:text-base tracking-wider transition-all duration-300 overflow-hidden shadow-md flex items-center justify-center gap-2">
+                  <span>Send Message</span>
+                  <svg class="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== -->
+  <footer class="border-t border-slate-200/50 dark:border-slate-800/40 py-8 bg-slate-100/30 dark:bg-slate-900/20 text-slate-500 dark:text-slate-400">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <a href="#" class="font-display font-bold text-lg text-slate-900 dark:text-white">
+          VIGNESHWARAN <span class="text-indigo-600 dark:text-emerald-400">R</span>
+        </a>
+        <p class="text-xs">
+          Designed and developed by <span class="text-slate-900 dark:text-white font-medium">Vigneshwaran R</span> © 2026. All rights reserved.
+        </p>
+        <div class="flex gap-4 text-xs font-semibold">
+          <a href="#" class="hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors">Home</a>
+          <a href="#about" class="hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors">About</a>
+          <a href="#projects" class="hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors">Projects</a>
+          <a href="#volunteer-achievement" class="hover:text-indigo-600 dark:hover:text-emerald-400 transition-colors">Volunteer/Achievement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP FLOATING BUTTON
+       ========================================================================== -->
+  <button id="scrollTop" class="fixed bottom-6 right-6 p-3 rounded-full bg-slate-900/90 dark:bg-slate-100/90 text-white dark:text-slate-900 shadow-md hover:shadow-lg opacity-0 pointer-events-none transition-all duration-300 scale-90 z-40 hover:-translate-y-0.5" aria-label="Scroll to Top">
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+      <path d="M18 15l-6-6-6 6"></path>
+    </svg>
+  </button>
+
+  <!-- External interactive script -->
+  <script src="script.js"></script>
+</body>
+</html>

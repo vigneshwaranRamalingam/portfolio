@@ -1,0 +1,212 @@
+/* ==========================================================================
+   CSS CUSTOM VARIABLES & GLOBAL ROOT STYLES
+   ========================================================================== */
+:root {
+  --bg-color: #f8fafc; /* slate-50 */
+  --text-color: #0f172a; /* slate-900 */
+  --loader-bg: #f8fafc;
+  --loader-spinner: #6366f1; /* indigo-500 */
+  --scroll-track: #f1f5f9;
+  --scroll-thumb: #cbd5e1;
+  --scroll-thumb-hover: #94a3b8;
+  
+  /* Glass card values (Light Mode) */
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(99, 102, 241, 0.08);
+  --glass-border-hover: rgba(99, 102, 241, 0.3);
+  --glass-shadow: 0 10px 30px -10px rgba(99, 102, 241, 0.06);
+  --glass-shadow-hover: 0 20px 45px -12px rgba(99, 102, 241, 0.12);
+  --accent-color: #6366f1;
+}
+
+html.dark {
+  --bg-color: #090d16; /* Dark slate/obsidian */
+  --text-color: #f1f5f9; /* slate-100 */
+  --loader-bg: #090d16;
+  --loader-spinner: #10b981; /* emerald-500 */
+  --scroll-track: #090d16;
+  --scroll-thumb: #1e293b;
+  --scroll-thumb-hover: #334155;
+
+  /* Glass card values (Dark Mode) */
+  --glass-bg: rgba(17, 23, 38, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-border-hover: rgba(16, 185, 129, 0.3);
+  --glass-shadow: 0 10px 35px -10px rgba(0, 0, 0, 0.35);
+  --glass-shadow-hover: 0 20px 45px -12px rgba(16, 185, 129, 0.15);
+  --accent-color: #10b981;
+}
+
+/* Base resets & transitions for theme switching */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ==========================================================================
+   CUSTOM SCROLLBAR STYLING
+   ========================================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+
+/* ==========================================================================
+   INITIAL PAGE LOADER
+   ========================================================================== */
+#loader-container {
+  position: fixed;
+  inset: 0;
+  background-color: var(--loader-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#loader-container.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(99, 102, 241, 0.15); /* Indigo tint */
+  border-radius: 50%;
+  border-top-color: var(--loader-spinner);
+  animation: spin 1s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   AMBIMENT GLOW BACKDROP BLOBS
+   ========================================================================== */
+.ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.06;
+  animation: float-glow 20s ease-in-out infinite alternate;
+}
+
+html.dark .ambient-glow {
+  opacity: 0.12;
+}
+
+@keyframes float-glow {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+}
+
+/* ==========================================================================
+   PREMIUM GLASSMORPHIC CARDS
+   ========================================================================== */
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              background-color 0.4s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--glass-border-hover);
+  box-shadow: var(--glass-shadow-hover);
+}
+
+/* ==========================================================================
+   INTERACTIVE SYSTEM ARCHITECTURE SVG DIAGRAM
+   ========================================================================== */
+.svg-node {
+  cursor: pointer;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.svg-node:hover {
+  filter: drop-shadow(0 0 10px var(--accent-color));
+  transform: scale(1.02);
+}
+
+.flow-line {
+  stroke-dasharray: 6, 8;
+  animation: animate-flow 35s linear infinite;
+}
+
+@keyframes animate-flow {
+  to {
+    stroke-dashoffset: -1000;
+  }
+}
+
+/* ==========================================================================
+   SCROLL ENTRANCE REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+              transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  will-change: transform, opacity;
+}
+
+.reveal.reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-100 { transition-delay: 100ms; }
+.reveal-delay-200 { transition-delay: 200ms; }
+.reveal-delay-300 { transition-delay: 300ms; }
+.reveal-delay-400 { transition-delay: 400ms; }
+
+/* Navigation active link style */
+.nav-link-active {
+  color: var(--loader-spinner) !important;
+}
+
+.nav-link-active::after {
+  transform: scaleX(1) !important;
+}
