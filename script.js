@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollspy();
   initScrollReveal();
   initScrollToTop();
+  initContactForm();
 });
 
 /* ==========================================================================
@@ -207,5 +208,130 @@ function initScrollToTop() {
       top: 0,
       behavior: 'smooth'
     });
+  });
+}
+
+/* ==========================================================================
+   7. CONTACT FORM VALIDATION & ACTIONS
+   ========================================================================== */
+function initContactForm() {
+  const form = document.getElementById('contact-form');
+  const gmailBtn = document.getElementById('contact-gmail-btn');
+  const whatsappBtn = document.getElementById('contact-whatsapp-btn');
+  
+  if (!form || !gmailBtn || !whatsappBtn) return;
+
+  const nameInput = document.getElementById('contact-name');
+  const emailInput = document.getElementById('contact-email');
+  const messageInput = document.getElementById('contact-message');
+
+  const errorName = document.getElementById('error-name');
+  const errorEmail = document.getElementById('error-email');
+  const errorMessage = document.getElementById('error-message');
+
+  const recipientEmail = 'mail4rviky@gmail.com';
+  const whatsappNumber = '919942286899';
+
+  // Helper to show inline error with animation
+  function showError(inputEl, errorEl, message) {
+    errorEl.querySelector('span').textContent = message;
+    errorEl.classList.remove('hidden');
+    // Force layout reflow
+    errorEl.offsetHeight;
+    errorEl.classList.remove('opacity-0', '-translate-y-1');
+    errorEl.classList.add('opacity-100', 'translate-y-0');
+    
+    // Highlight input border
+    inputEl.classList.add('border-rose-500', 'focus:border-rose-500', 'dark:border-rose-500/50', 'dark:focus:border-rose-500');
+    inputEl.classList.remove('border-slate-200', 'dark:border-slate-800/60');
+  }
+
+  // Helper to clear error
+  function clearError(inputEl, errorEl) {
+    if (errorEl.classList.contains('hidden')) return;
+    errorEl.classList.remove('opacity-100', 'translate-y-0');
+    errorEl.classList.add('opacity-0', '-translate-y-1');
+    
+    inputEl.classList.remove('border-rose-500', 'focus:border-rose-500', 'dark:border-rose-500/50', 'dark:focus:border-rose-500');
+    inputEl.classList.add('border-slate-200', 'dark:border-slate-800/60');
+    
+    const onTransitionEnd = () => {
+      errorEl.classList.add('hidden');
+      errorEl.removeEventListener('transitionend', onTransitionEnd);
+    };
+    errorEl.addEventListener('transitionend', onTransitionEnd);
+  }
+
+  // Handle errors closing on input
+  nameInput.addEventListener('input', () => clearError(nameInput, errorName));
+  emailInput.addEventListener('input', () => clearError(emailInput, errorEmail));
+  messageInput.addEventListener('input', () => clearError(messageInput, errorMessage));
+
+  // Perform form validation
+  function validate() {
+    let isValid = true;
+    
+    // Validate Name
+    const nameVal = nameInput.value.trim();
+    if (nameVal === '') {
+      showError(nameInput, errorName, 'Name is required');
+      isValid = false;
+    } else {
+      clearError(nameInput, errorName);
+    }
+
+    // Validate Email
+    const emailVal = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (emailVal === '') {
+      showError(emailInput, errorEmail, 'Email address is required');
+      isValid = false;
+    } else if (!emailRegex.test(emailVal)) {
+      showError(emailInput, errorEmail, 'Please enter a valid email address');
+      isValid = false;
+    } else {
+      clearError(emailInput, errorEmail);
+    }
+
+    // Validate Message
+    const messageVal = messageInput.value.trim();
+    if (messageVal === '') {
+      showError(messageInput, errorMessage, 'Message is required');
+      isValid = false;
+    } else {
+      clearError(messageInput, errorMessage);
+    }
+
+    return isValid;
+  }
+
+  // Handle Gmail compose opening
+  gmailBtn.addEventListener('click', () => {
+    if (!validate()) return;
+
+    const name = nameInput.value.trim();
+    const email = emailInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const subject = `Portfolio Contact from ${name}`;
+    const body = `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`;
+
+    // Gmail Web compose link
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(recipientEmail)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.open(gmailUrl, '_blank');
+  });
+
+  // Handle WhatsApp compose opening
+  whatsappBtn.addEventListener('click', () => {
+    if (!validate()) return;
+
+    const name = nameInput.value.trim();
+    const message = messageInput.value.trim();
+
+    const text = `Hi Vigneshwaran,\n\nName: ${name}\n\nMessage:\n${message}`;
+
+    // WhatsApp wa.me link
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappUrl, '_blank');
   });
 }
