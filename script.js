@@ -107,15 +107,23 @@ function initMobileMenu() {
 
   if (!menuToggle || !mobileMenu) return;
 
+  function updateAriaStates() {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    menuToggle.setAttribute('aria-expanded', !isHidden);
+    mobileMenu.setAttribute('aria-hidden', isHidden);
+  }
+
   // Toggle mobile navigation visibility
   menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
+    updateAriaStates();
   });
 
   // Close mobile navigation drawer on link selection
   closeMenuLinks.forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.add('hidden');
+      updateAriaStates();
     });
   });
 }
@@ -244,6 +252,10 @@ function initContactForm() {
     // Highlight input border
     inputEl.classList.add('border-rose-500', 'focus:border-rose-500', 'dark:border-rose-500/50', 'dark:focus:border-rose-500');
     inputEl.classList.remove('border-slate-200', 'dark:border-slate-800/60');
+
+    // Accessibility ARIA linkage
+    inputEl.setAttribute('aria-invalid', 'true');
+    inputEl.setAttribute('aria-describedby', errorEl.id);
   }
 
   // Helper to clear error
@@ -254,6 +266,10 @@ function initContactForm() {
     
     inputEl.classList.remove('border-rose-500', 'focus:border-rose-500', 'dark:border-rose-500/50', 'dark:focus:border-rose-500');
     inputEl.classList.add('border-slate-200', 'dark:border-slate-800/60');
+
+    // Remove accessibility ARIA linkage
+    inputEl.removeAttribute('aria-invalid');
+    inputEl.removeAttribute('aria-describedby');
     
     const onTransitionEnd = () => {
       errorEl.classList.add('hidden');
