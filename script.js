@@ -199,16 +199,24 @@ function initScrollToTop() {
   const scrollBtn = document.getElementById('scrollTop');
   if (!scrollBtn) return;
 
-  // Toggle button visibility based on scroll depth
+  let isRunning = false;
+
+  // Toggle button visibility based on scroll depth (passive and throttled via requestAnimationFrame)
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      scrollBtn.classList.remove('opacity-0', 'pointer-events-none', 'scale-90');
-      scrollBtn.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
-    } else {
-      scrollBtn.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
-      scrollBtn.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+    if (!isRunning) {
+      window.requestAnimationFrame(() => {
+        if (window.scrollY > 400) {
+          scrollBtn.classList.remove('opacity-0', 'pointer-events-none', 'scale-90');
+          scrollBtn.classList.add('opacity-100', 'pointer-events-auto', 'scale-100');
+        } else {
+          scrollBtn.classList.remove('opacity-100', 'pointer-events-auto', 'scale-100');
+          scrollBtn.classList.add('opacity-0', 'pointer-events-none', 'scale-90');
+        }
+        isRunning = false;
+      });
+      isRunning = true;
     }
-  });
+  }, { passive: true });
 
   // Smooth scroll back to coordinates 0,0
   scrollBtn.addEventListener('click', () => {
